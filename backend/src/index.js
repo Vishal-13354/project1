@@ -21,10 +21,15 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://project1-joyg.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://project1-joyg.vercel.app",
+      "https://project1-mj91.vercel.app", // ✅ Add this!
+    ],
     credentials: true,
   })
 );
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
